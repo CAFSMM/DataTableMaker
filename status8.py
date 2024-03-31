@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 
 #table info
-title_text = 'Status 7'
+title_text = 'Status 8'
 footer_text = ''
 fig_background_color = 'white'
 fig_border = 'black'
@@ -15,8 +15,6 @@ text_size = 15
 #La tabla SIEMPRE elimina la primera fila y columna de data (los 'headers')
 #el resto se dibuja sin problemas
 #debe ser una matriz. Los datos "vacios" deben ser strings vacios
-
-var_comprador_oc = 'fulanito de tal'
 
 var_fecha = 'dd mm aa'
 var_info_text = 'favor generar boleta (esto es un texto de prueba)'
@@ -40,7 +38,8 @@ data =  [
             ['nill','Monto Factura',var_monto_factura,'Monto OC',var_monto_oc],
             ['nill','Folio Factura',var_folio_factura,'N° OC',var_nro_oc],
             ['nill','Fecha Factura',var_fecha_factura,'Fecha OC',var_fecha_oc],
-
+            ['nill','','','',''],
+            #programar para N productos <-!
         ]
 # Pop the headers from the data array
 column_headers = data.pop(0)
@@ -88,15 +87,11 @@ plt.suptitle(title_text)
 
 #plt.figtext(.5,.95,'\nFoo Bar\n', fontsize=18, ha='center')
 
-plt.figtext(.05,.8,'Confirmacion Factura con OC/OS\n' + var_info_text,fontsize=10,ha='left')
+plt.figtext(.05,.8,'Confirmacion con Recepcion Materiales Sin Match\n' + var_info_text,fontsize=12,ha='left')
 
 plt.figtext(.05,.75,'Fecha: ' + var_fecha,fontsize=10,ha='left')
 
-plt.figtext(.05,.7,'Aviso N°: ' + var_nro_aviso,fontsize=10,ha='left')
-
-plt.figtext(.05,.65,'Fecha de Rechazo de Factura: ' + var_fecha_rechazo_factura,fontsize=10,ha='left')
-
-plt.figtext(.05, .575, 'Informacion de Respaldo',fontsize=8,ha='left')
+plt.figtext(.05,.7,'Aviso N°: ' + var_nro_aviso,fontsize=12,ha='left')
 
 # Force the figure to update, so backends center objects correctly within the figure.
 # Without plt.draw() here, the title will center on the axes and not the figure.
